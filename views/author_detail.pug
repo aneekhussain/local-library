@@ -1,8 +1,9 @@
 extends layout
 
 block content
-img(src="public/images/author/arg.jpg" alt="" style='width:100px; height:100px;')
+
   h1 Author: #{author.name}
+  img(src="public/images/author/arg.jpg" alt="" style='width:100px; height:100px;')
   p #{author.date_of_birth} - #{author.date_of_death}
 
   div(style='margin-left:20px;margin-top:20px')
