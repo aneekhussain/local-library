@@ -34,7 +34,7 @@ async function main() {
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-app.set('views', './src/public');
+
 
 app.use(logger('dev'));
 app.use(express.json());
