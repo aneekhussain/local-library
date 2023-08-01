@@ -43,7 +43,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-//compression and catalog routes to middleware
+//compression and catalog routes to middlewaree
 app.use(compression());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
