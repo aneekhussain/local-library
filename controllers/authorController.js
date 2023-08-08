@@ -227,7 +227,7 @@ exports.author_update_post = [
 
 
 exports.author_upload_image = [
-  uploadAuthorImage.single("image"),
+  uploadAuthorImage.single("image_path"),
   
   asyncHandler(async (req, res, next) => {
     const author = await Author.findById(req.params.id).exec();
@@ -238,7 +238,7 @@ exports.author_upload_image = [
       return next(err);
     }
     //uodate author img in database
-    await Author.findByIdAndUpdate(req.params.id, {image: req.file.filename}, {});
+    await Author.findByIdAndUpdate(req.params.id, {image_path: req.file.filename}, {});
 
     res.redirect(author.url);
   }),
