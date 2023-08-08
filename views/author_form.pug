@@ -18,10 +18,12 @@ block content
     button.btn.btn-primary(type='submit') Submit 
     
     h2 Upload image 
-    div.form-group 
-        label(for="upload") upload author image:
-        input#upload(type="button", name="upload") 
-    button.btn.btn-primary(type="submit") upload
+    form(action="imageUpdate", method="POST", enctype="multipart/form-data") 
+      div.form-group 
+        label(for="image") upload author image:
+        input#image.form-control(type="file", name="image", value=(author===undefined ? "" : author_image) accept="image/jpg, image/png, image/jpeg") 
+    button.btn.btn-primary(type="submit") upload image
+  
   if errors
     ul
       for error in errors
