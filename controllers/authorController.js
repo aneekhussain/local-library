@@ -242,4 +242,4 @@ exports.author_upload_image = [
 
     res.redirect(author.url);
   }),
-];
+]
