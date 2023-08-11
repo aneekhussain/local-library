@@ -238,8 +238,8 @@ exports.author_upload_image = [
       return next(err);
     }
     //uodate author img in database
-    await Author.findByIdAndUpdate(req.params.id, {image: req.file.filename}, {});
+    await Author.findByIdAndUpdate(req.params.id, { image: req.file.filename }, {});
 
     res.redirect(author.url);
   }),
-]
+];
