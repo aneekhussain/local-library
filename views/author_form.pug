@@ -21,7 +21,7 @@ block content
     form(action="imageUpdate", method="POST", enctype="multipart/form-data") 
       div.form-group 
         label(for="image_path") upload author image:
-        input#image_path.form-control(type="file", name="image_path", value=(author===undefined ? "" : author.image_path) accept="image_path/jpg, image_path/png, image_path/jpeg") 
+        input#image_path.form-control(type="file", name="image_path", value=(author===undefined ? "" : author.image_path)) 
     button.btn.btn-primary(type="submit") upload image
   
   if errors
