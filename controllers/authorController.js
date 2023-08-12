@@ -1,6 +1,5 @@
 const Author = require("../models/author");
 const Book = require("../models/book");
-const asyncHandler = require("express-async-handler");
 const { body, validationResult } = require("express-validator");
 
 //file system module
@@ -15,6 +14,8 @@ const storage = multer.diskStorage({
   }
 })
 const uploadAuthorImage = multer({storage: storage});
+
+const asyncHandler = require("express-async-handler");
 
 // Display list of all Authors.
 exports.author_list = asyncHandler(async (req, res, next) => {
