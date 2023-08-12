@@ -66,7 +66,7 @@ router.get("/authors", author_controller.author_list);
 
 
 //POST request for image uploads
-router.get("/authors/:id/imageUpdate", author_controller.author_upload_image);
+router.get("/author/:id/imageUpdate", author_controller.author_upload_image);
 
 /// GENRE ROUTES ///
 
