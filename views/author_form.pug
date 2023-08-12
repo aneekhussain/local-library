@@ -20,8 +20,8 @@ block content
     h2 Upload image 
     form(action="imageUpdate", method="POST", enctype="multipart/form-data") 
       div.form-group 
-        label(for="image") upload author image:
-        input#image_path.form-control(type="file", name="image", value=(author===undefined ? "" : author.image) accept="image/jpg, image/png, image/jpeg") 
+        label(for="image_path") upload author image:
+        input#image_path.form-control(type="file", name="image_path", value=(author===undefined ? "" : author.image_path) accept="image_path/jpg, image_path/png, image_path/jpeg") 
     button.btn.btn-primary(type="submit") upload image
   
   if errors
