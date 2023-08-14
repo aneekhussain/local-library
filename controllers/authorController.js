@@ -6,7 +6,7 @@ const { body, validationResult } = require("express-validator");
 const multer = require("multer");
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, "public/images/authors")
+    cb(null, "public/images/authors/")
   },
   filename: function(req, file, cb) {
     cb(null, file.originalname)
@@ -55,7 +55,7 @@ exports.author_create_get = (req, res, next) => {
 // Handle Author create on POST.
 exports.author_create_post = [
   //image upload
-  upload.single("image_path"),
+  upload.single("image"),
   // Validate and sanitize fields.
   body("first_name")
     .trim()
@@ -174,7 +174,7 @@ exports.author_update_get = asyncHandler(async (req, res, next) => {
 
 // Handle Author update on POST.
 exports.author_update_post = [
-  upload.single("image_path"),
+  upload.single("image"),
   // Validate and sanitize fields.
   body("first_name")
     .trim()
