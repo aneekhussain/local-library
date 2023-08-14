@@ -91,6 +91,7 @@ exports.author_create_post = [
       family_name: req.body.family_name,
       date_of_birth: req.body.date_of_birth,
       date_of_death: req.body.date_of_death,
+      image_path: req.file.filename,
     });
 
     if (!errors.isEmpty()) {
