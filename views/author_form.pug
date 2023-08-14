@@ -14,15 +14,9 @@ block content
     div.form-group
        label(for='date_of_death') Date of death: 
        input#date_of_death.form-control(type='date' name='date_of_death' value=(undefined===author ? '' : author.date_of_death) )
-    div.form-group
+       label(for="image_path") upload author image:
+       input#image_path.form-control(type="file", name="image_path" value=(undefined===author ? "" : author.image_path)) 
     button.btn.btn-primary(type='submit') Submit 
-    
-    h2 Upload image 
-    form(action="imageUpdate", method="POST", enctype="multipart/form-data") 
-      div.form-group 
-        label(for="image_path") upload author image:
-        input#image_path.form-control(type="file", name="image_path", value=(undefined===author ? "" : author.image_path)) 
-    button.btn.btn-primary(type="submit") upload image
   
   if errors
     ul

@@ -3,7 +3,6 @@ const Book = require("../models/book");
 const { body, validationResult } = require("express-validator");
 
 //file system module
-const fs = require("fs");
 const multer = require("multer");
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -13,7 +12,7 @@ const storage = multer.diskStorage({
     cb(null, file.originalname)
   }
 })
-const uploadAuthorImage = multer({storage: storage});
+const upload = multer({storage: storage});
 
 const asyncHandler = require("express-async-handler");
 
@@ -55,6 +54,8 @@ exports.author_create_get = (req, res, next) => {
 
 // Handle Author create on POST.
 exports.author_create_post = [
+  //image upload
+  upload.single("image_path"),
   // Validate and sanitize fields.
   body("first_name")
     .trim()
@@ -172,6 +173,7 @@ exports.author_update_get = asyncHandler(async (req, res, next) => {
 
 // Handle Author update on POST.
 exports.author_update_post = [
+  upload.single("image_path"),
   // Validate and sanitize fields.
   body("first_name")
     .trim()
@@ -208,6 +210,7 @@ exports.author_update_post = [
       date_of_birth: req.body.date_of_birth,
       date_of_death: req.body.date_of_death,
       _id: req.params.id,
+      image_path: req.file.filename,
     });
 
     if (!errors.isEmpty()) {
@@ -227,7 +230,7 @@ exports.author_update_post = [
 ];
 
 
-exports.author_upload_image = [
+/*exports.author_upload_image = [
   uploadAuthorImage.single("image_path"),
   
   asyncHandler(async (req, res, next) => {
@@ -238,9 +241,9 @@ exports.author_upload_image = [
       err.status = 404;
       return next(err);
     }
-    //uodate author img in database
+    //update author img in database
     await Author.findByIdAndUpdate(req.params.id, { image_path: req.file ? req.file.filename : null });
 
     res.redirect(author.url);
   }),
-]
+]*/
