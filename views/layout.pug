@@ -21,6 +21,12 @@ html(lang='en')
               li
                 a(href='/catalog') Home
               li
+                hr
+              li 
+                form(action="/catalog/serching_list", method="POST")
+                  input(type="text", name="search", placeholder="Searching..." class="search")
+                  button(type="submit") Submit
+              li
                 a(href='/catalog/books') All books
               li
                 a(href='/catalog/authors') All authors
