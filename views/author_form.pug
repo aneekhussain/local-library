@@ -15,7 +15,7 @@ block content
        label(for='date_of_death') Date of death: 
        input#date_of_death.form-control(type='date' name='date_of_death' value=(undefined===author ? '' : author.date_of_death) )
        label(for="image") upload author image:
-       input#image_path.form-control(type="file", name="image" value=(undefined===author ? "" : author.image_path)) 
+       input#image_path.form-control(type="file", name="image") 
     button.btn.btn-primary(type='submit') Submit 
   
   if errors
