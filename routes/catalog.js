@@ -9,6 +9,9 @@ const book_instance_controller = require("../controllers/bookinstanceController"
 const multer = require("multer");
 const uploadAuthorImage = multer({dest: "../public/images/authors"});
 
+//SEARCH ROUTE
+router.post("/searching_list", search_controller.search);
+
 /// BOOK ROUTES ///
 
 // GET catalog home page.
