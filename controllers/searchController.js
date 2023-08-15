@@ -7,10 +7,8 @@ const asyncHandler = require("express-async-handler");
 exports.search = asyncHandler(async (req, res, next ) => {
     const search = req.body.search.toString();
     const [authors, books, genres, bookinstances ] = await Promise.all([
-        Author.find({title: {$regex: search}}), 
+        Author.find({first_name: {$regex: search}}), 
         Book.find({title: {$regex: search}}),
-        Genre.find({title: {$regex: search}}),
-        BookInstance.find({title: {$regex: search}}),
     ]);
 
     res.render("searching_list", {
@@ -21,3 +19,5 @@ exports.search = asyncHandler(async (req, res, next ) => {
         bookinstances,
     });
 });
+//Genre.find({name: {$regex: search}}),
+//BookInstance.find({status: {$regex: search}}),
