@@ -79,6 +79,8 @@ exports.author_create_post = [
     .optional({ values: "falsy" })
     .isISO8601()
     .toDate(),
+  body("image")
+    .optional(),
 
   // Process request after validation and sanitization.
   asyncHandler(async (req, res, next) => {
