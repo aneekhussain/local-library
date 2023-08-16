@@ -7,7 +7,7 @@ h1=title
 
 if authors.length > 0
    ul 
-      each author in authors 
+      each author in author_list 
          li 
             a(href=author.url) #{author.name}
 else 
@@ -16,7 +16,7 @@ else
 
 if books.length > 0
    ul 
-      each book in books 
+      each book in book_list
          li 
             a(href=book.url) #{book.title}
 else 
