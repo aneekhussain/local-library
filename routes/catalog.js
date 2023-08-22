@@ -8,7 +8,7 @@ const genre_controller = require("../controllers/genreController");
 const book_instance_controller = require("../controllers/bookinstanceController");
 const search_controller = require("../controllers/searchController");
 const multer = require("multer");
-const uploadAuthorImage = multer({ dest: "../public/images/authors"});
+const upload = multer({ dest: "../public/images/authors"});
 
 //SEARCH ROUTE
 router.post("/searching_list", search_controller.search);

@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
     cb(null, file.originalname)
   }
 })
-const uploadAuthorImage = multer({storage: storage});
+const upload = multer({storage: storage});
 
 const asyncHandler = require("express-async-handler");
 
@@ -54,7 +54,6 @@ exports.author_create_get = (req, res, next) => {
 
 // Handle Author create on POST.
 exports.author_create_post = [
-  //image upload
   // Validate and sanitize fields.
   body("first_name")
     .trim()
@@ -230,7 +229,7 @@ exports.author_update_post = [
 
 
 exports.author_upload_image = [
-  uploadAuthorImage.single("image_path"),
+  upload.single("image_path"),
   
   asyncHandler(async (req, res, next) => {
     const author = await Author.findById(req.params.id).exec();
