@@ -228,6 +228,7 @@ exports.author_update_post = [
       // Data from form is valid. Update the record.
       await Author.findByIdAndUpdate(req.params.id, author);
       res.redirect(author.url);
+      
     }
   }),
 ];
