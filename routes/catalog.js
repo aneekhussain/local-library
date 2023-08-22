@@ -7,7 +7,8 @@ const author_controller = require("../controllers/authorController");
 const genre_controller = require("../controllers/genreController");
 const book_instance_controller = require("../controllers/bookinstanceController");
 const search_controller = require("../controllers/searchController");
-
+const multer = require("multer");
+const uploadAuthorImage = multer({ dest: "../public/images/authors"});
 
 //SEARCH ROUTE
 router.post("/searching_list", search_controller.search);
@@ -66,6 +67,8 @@ router.get("/author/:id", author_controller.author_detail);
 
 // GET request for list of all Authors.
 router.get("/authors", author_controller.author_list);
+
+router.post("/authors/:id/imageUP", author_controller.author_upload_image);
 
 /// GENRE ROUTES ///
 

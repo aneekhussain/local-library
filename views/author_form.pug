@@ -14,10 +14,15 @@ block content
     div.form-group
        label(for='date_of_death') Date of death: 
        input#date_of_death.form-control(type='date' name='date_of_death' value=(undefined===author ? '' : author.date_of_death) )
-       label(for="image") upload author image:
-       input#image_path.form-control(type="file", name="image") 
+    div.form-group  
     button.btn.btn-primary(type='submit') Submit 
   
+
+  form(method="POST", action="imageUp",  enctype="multipart/form-data")
+    div.form-group
+      label(for="image_path") upload author image:
+      input#image_path.form-control(type="file", name="image_path" value=(undefined===author ? '' : author.image_path) accept="image/jpg, image/png, image/jpeg")
+    button.btn.btn-primary(type="submit") upload
   if errors
     ul
       for error in errors
