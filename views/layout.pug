@@ -39,10 +39,10 @@ html(lang='en')
               li
                 a(href='/catalog/bookinstance/create') Create new book instance
               li 
-                form(action="/catalog/serching_list", method="POST")
+                form(action="/catalog/searching_list", method="POST")
                   input(type="text", name="search", placeholder="Searching..." class="search")
                   button(type="submit") Submit
-              li(class="hr")
+              li
 
         div(class='col-sm-10')
           block content
