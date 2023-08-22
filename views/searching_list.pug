@@ -1,23 +1,22 @@
 extends layout 
 
-
 block content 
-h1=title 
+   h1=title 
 
 
-if authors.length > 0
-   ul 
-      each author in authors 
-         li 
-            a(href=author.url) #{author.name}
-else 
-   p There are no authors.
+   if authors.length > 0
+      ul 
+         each author in authors 
+            li 
+               a(href=author.url) #{author.name}
+   else 
+      p There are no authors.
 
 
-if books.length > 0
-   ul 
-      each book in books
-         li 
-            a(href=book.url) #{book.title}
-else 
-   p There are no books.
+   if books.length > 0
+      ul 
+         each book in books
+            li 
+               a(href=book.url) #{book.title}
+   else 
+      p There are no books.
