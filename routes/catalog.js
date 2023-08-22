@@ -68,7 +68,7 @@ router.get("/author/:id", author_controller.author_detail);
 // GET request for list of all Authors.
 router.get("/authors", author_controller.author_list);
 
-router.post("/authors/:id/imageUP", author_controller.author_upload_image);
+router.post("/authors/:id/imageUp", author_controller.author_upload_image);
 
 /// GENRE ROUTES ///
 
