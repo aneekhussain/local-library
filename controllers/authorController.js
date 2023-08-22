@@ -55,7 +55,6 @@ exports.author_create_get = (req, res, next) => {
 // Handle Author create on POST.
 exports.author_create_post = [
   //image upload
-  upload.single("image"),
   // Validate and sanitize fields.
   body("first_name")
     .trim()
@@ -79,8 +78,7 @@ exports.author_create_post = [
     .optional({ values: "falsy" })
     .isISO8601()
     .toDate(),
-  body("image")
-    .optional(),
+
 
   // Process request after validation and sanitization.
   asyncHandler(async (req, res, next) => {
@@ -93,7 +91,7 @@ exports.author_create_post = [
       family_name: req.body.family_name,
       date_of_birth: req.body.date_of_birth,
       date_of_death: req.body.date_of_death,
-      image_path: req.file.filename,
+      
     });
 
     if (!errors.isEmpty()) {
@@ -176,7 +174,6 @@ exports.author_update_get = asyncHandler(async (req, res, next) => {
 
 // Handle Author update on POST.
 exports.author_update_post = [
-  upload.single("image"),
   // Validate and sanitize fields.
   body("first_name")
     .trim()
@@ -212,7 +209,6 @@ exports.author_update_post = [
       family_name: req.body.family_name,
       date_of_birth: req.body.date_of_birth,
       date_of_death: req.body.date_of_death,
-      image_path: req.file.filename,
       _id: req.params.id,
     });
 
@@ -233,7 +229,7 @@ exports.author_update_post = [
 ];
 
 
-/*exports.author_upload_image = [
+exports.author_upload_image = [
   uploadAuthorImage.single("image_path"),
   
   asyncHandler(async (req, res, next) => {
@@ -249,4 +245,4 @@ exports.author_update_post = [
 
     res.redirect(author.url);
   }),
-]*/
+]
