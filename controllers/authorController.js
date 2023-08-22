@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
     cb(null, file.originalname)
   }
 })
-const upload = multer({storage: storage});
+const uploadAuthorImage = multer({storage: storage});
 
 const asyncHandler = require("express-async-handler");
 
