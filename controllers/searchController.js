@@ -12,7 +12,7 @@ exports.search = asyncHandler(async (req, res, next ) => {
 
     res.render("searching_list", {
         title: "Search",
-        authors,
-        books,
+        authors: authors,
+        books: books,
     });
 });
