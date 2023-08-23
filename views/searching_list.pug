@@ -6,19 +6,19 @@ block content
    
    if authors.length > 0
       ul 
-         p Author(s)
+      p Author(s)
          each author in authors 
             li 
                a(href=author.url) #{author.name}
    else 
-      p Could not find the author with that name!
+      p Could not find the author with that keyword!
 
 
    if books.length > 0
       ul 
-         p book(s)
+      p book(s)
          each book in books
             li 
                a(href=book.url) #{book.title}
    else 
-      p Could not find any books with that title!
+      p Could not find any books with that keyword!
