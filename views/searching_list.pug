@@ -10,7 +10,7 @@ block content
             li 
                a(href=author.url) #{author.name}
    else 
-      p There are no authors.
+      p Could not find the author with that name!
 
 
    if books.length > 0
@@ -19,4 +19,4 @@ block content
             li 
                a(href=book.url) #{book.title}
    else 
-      p There are no books.
+      p Could not find any books with that title!
