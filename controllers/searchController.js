@@ -6,8 +6,8 @@ exports.search = asyncHandler(async (req, res, next ) => {
     const search = req.body.search.toString();
 
     const [authors, books] = await Promise.all([
-        Author.find({first_name: {$regex: search}}), 
-        Book.find({title: {$regex: search}}),
+        Author.find({first_name: {$regex: search, $options: "i"}}), 
+        Book.find({title: {$regex: search, $options: "i"}}),
     ]);
 
     res.render("searching_list", {
