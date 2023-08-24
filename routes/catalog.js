@@ -7,6 +7,8 @@ const author_controller = require("../controllers/authorController");
 const genre_controller = require("../controllers/genreController");
 const book_instance_controller = require("../controllers/bookinstanceController");
 const search_controller = require("../controllers/searchController");
+
+//required multer for uploading image
 const multer = require("multer");
 const upload = multer({ dest: "../public/images/authors"});
 
