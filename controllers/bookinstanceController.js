@@ -31,7 +31,6 @@ exports.bookinstance_detail = asyncHandler(async (req, res, next) => {
   });
 });
 
-
 // Display BookInstance create form on GET.
 exports.bookinstance_create_get = asyncHandler(async (req, res, next) => {
   const allBooks = await Book.find({}, "title").exec();
