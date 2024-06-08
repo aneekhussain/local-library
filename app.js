@@ -55,8 +55,8 @@ app.use(
 );
 //Ratelimit 
 const limiter = RateLimit({
-  windowMs: 1*60*10000,
-  max:30,
+  windowMs: 1*60*1000,
+  max:20,
 });
 app.use(limiter);
 
