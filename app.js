@@ -20,7 +20,7 @@ const app = express();
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 // Set up mongoose connection
-const dev_db_url ="mongodb://mongo:A-cbEf-a2CG4daf3DBh3Hbfhc-eAd2CF@monorail.proxy.rlwy.net:57451";
+const dev_db_url ="mongodb+srv://aneek:aneek786@cluster0.hpynao7.mongodb.net/local_library?retryWrites=true&w=majority";
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 
