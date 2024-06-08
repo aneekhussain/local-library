@@ -18,9 +18,9 @@ html(lang='en')
         div(class='col-sm-2')
           block sidebar
             ul(class='sidebar-nav')
-              li
+              li(class="title")
                 a(href='/catalog') Home
-              li
+              li       
                 a(href='/catalog/books') All books
               li
                 a(href='/catalog/authors') All authors
@@ -37,7 +37,14 @@ html(lang='en')
               li
                 a(href='/catalog/book/create') Create new book
               li
-                a(href='/catalog/bookinstance/create') Create new book instance (copy)
+                a(href='/catalog/bookinstance/create') Create new book instance
+              li 
+                hr
+              li
+                form(action="/catalog/searching_list", method="POST")
+                  input(type="text", name="search", placeholder="Searching..." class="search")
+                  button(type="submit") Submit
+              li
 
         div(class='col-sm-10')
           block content

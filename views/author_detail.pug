@@ -3,9 +3,9 @@ extends layout
 block content
 
   h1 Author: #{author.name}
-  p #{author.date_of_birth} - #{author.date_of_death}
+  p #{author.lifespan}
+  img(src="/images/authors/" + author.image_path, width="200", height="200")
   
-
   div(style='margin-left:20px;margin-top:20px')
   
 
@@ -21,7 +21,8 @@ block content
         p This author has no books.
       
   hr
-  img(src='/public/images/arg.jpg' style='width:100px; height:100px;')
+  p
+    a(href=author.url+'/update') Update this author
   p 
     a(href=author.url+'/delete') Delete this author
   

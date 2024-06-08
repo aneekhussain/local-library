@@ -20,8 +20,7 @@ const app = express();
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 // Set up mongoose connection
-const dev_db_url =
-  "mongodb+srv://your_user_name:your_password@cluster0.lz91hw2.mongodb.net/local_library?retryWrites=true&w=majority";
+const dev_db_url ="mongodb+srv://aneek:<password>@cluster0.hpynao7.mongodb.net/local_library?retryWrites=true&w=majority";
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 
@@ -35,15 +34,13 @@ async function main() {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-//compression and catalog routes to middleware
+//compression and catalog routes to middlewaree
 app.use(compression());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
