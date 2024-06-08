@@ -21,7 +21,7 @@ const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 // Set up mongoose connection
 const dev_db_url ="mongodb+srv://aneek:aneek786@cluster0.hpynao7.mongodb.net/local_library?retryWrites=true&w=majority";
-//const mongoDB = process.env.MONGODB_URI || dev_db_url;
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 main().catch((err) => console.log("database err:", err));
 async function main() {
